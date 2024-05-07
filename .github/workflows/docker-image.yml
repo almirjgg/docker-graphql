@@ -35,13 +35,13 @@ jobs:
         NEW_VERSION: ${{steps.version.outputs.version}}
       run: |
         docker build -t almirguns/githubactions:$NEW_VERSION .
-        docker build -t almirguns/githubactions:latest .
+        # docker build -t almirguns/githubactions:latest .
     - name: Push Docker Image
       env:
         NEW_VERSION: ${{steps.version.outputs.version}}
       run: |
         docker push almirguns/githubactions:$NEW_VERSION
-        docker push almirguns/githubactions:latest
+        # docker push almirguns/githubactions:latest
         
     # - name: Build the Docker image
     #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
